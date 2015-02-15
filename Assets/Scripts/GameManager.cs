@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour {
 			planetProperties.incrementEverySeconds = Random.Range(1, 10);
 			
 			GameObject planetCanvas = (GameObject)Instantiate(PlanetCanvasPrefab, Camera.main.WorldToScreenPoint(go.transform.position), Quaternion.identity);
-			planetCanvas.transform.parent = PlanetCanvasContainer.transform;
+			planetCanvas.transform.SetParent(PlanetCanvasContainer.transform);
 			planetCanvas.GetComponent<UpdatePosition>().targetPlanet = go;
 		}
 	}
